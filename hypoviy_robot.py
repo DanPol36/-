@@ -7,7 +7,9 @@ class RobotGui:
     # заглушка с функциями под будущее управление и подвязку кнопок
 
     def power_on(self):
-        pass
+        while True:
+            print(1)
+        # pass
 
     def power_off(self):
         pass

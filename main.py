@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from hypoviy_robot import RobotGui, StateManager, Logger, Statistics
 import sys
-import threading
+# import threading
 
 class Controller:
     # контроллер
@@ -13,7 +13,7 @@ class Controller:
         self.state = StateManager()
         self.logger = Logger()
         self.stats = Statistics()
-        self.connect_buttons()
+        # self.connect_buttons()
 
 def main():
     # запуск Qt
@@ -23,12 +23,12 @@ def main():
     ui.setupUi(window)
 
     # создание контроллера
-    controller = Controller(ui)
+    # controller = Controller(ui)
 
     # показ окна
     window.show()
     sys.exit(app.exec_())
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
