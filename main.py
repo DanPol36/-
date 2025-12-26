@@ -1,5 +1,3 @@
-
-# main.py
 from design import Ui_MainWindow
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
@@ -8,7 +6,6 @@ import sys
 
 class Controller:
     def __init__(self, ui):
-        # store references and attach UI to the robot frontend
         self.ui = ui
         self.root = RobotGui(ui)
         self.state = StateManager()
@@ -18,7 +15,7 @@ class Controller:
 def main():
     app = QApplication(sys.argv)
     window = QMainWindow()
-    ui = Ui_MainWindow()  # Исправлено: ui_MainWindow -> Ui_MainWindow
+    ui = Ui_MainWindow()  
     ui.setupUi(window)
     
     # Инициализация контроллера
