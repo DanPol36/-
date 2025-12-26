@@ -1,15 +1,21 @@
-#import sys
-#from PyQt5 import QtWidgets
+# import sys
+# from PyQt5 import QtWidgets
+# from design import Ui_MainWindow
 
-#from interface import Ui_MainWindow 
-
-class RobotGui:
+class RobotGui():
     # заглушка с функциями под будущее управление и подвязку кнопок
+    def __init__(self, ui=None):
+        # store reference to UI if provided
+        self.ui = ui
 
     def power_on(self):
-        while True:
-            print(1)
-        # pass
+        # guard: require UI reference
+        if not hasattr(self, "ui") or self.ui is None:
+            return
+        # connect UI button to printing action (inline)
+        self.ui.pushButton.clicked.connect(lambda: print(1))
+        # immediately perform power on action (print 1)
+        print(1)
 
     def power_off(self):
         pass
@@ -53,7 +59,7 @@ class StateManager:
     ESTOP = "ESTOP"
     MANUAL = "MANUAL"
 
-    def init(self):
+    def __init__(self):
         self.state = self.IDLE
         self.manual_enabled = False
 
@@ -71,7 +77,7 @@ class StateManager:
 
 class Logger:
     # логгер
-    def init(self, path="logs.txt"):
+    def __init__(self, path="logs.txt"):
         self.path = path
 
     def write(self, text):
@@ -80,7 +86,7 @@ class Logger:
 
 class Statistics:
     # cтата
-    def init(self):
+    def __init__(self):
         self.categories = [
             {"name": "A", "count": 0},
             {"name": "B", "count": 0},

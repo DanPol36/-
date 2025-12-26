@@ -369,46 +369,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QTableWidget" name="tableWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>10</y>
-      <width>551</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <row>
-     <property name="text">
-      <string>Actual</string>
-     </property>
-    </row>
-    <column>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Y</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Z</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>rx</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>rz</string>
-     </property>
-    </column>
-   </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
@@ -567,6 +527,84 @@
     <property name="text">
      <string>Логи</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>551</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Цвет светофора</string>
+    </property>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:white;
+color:red;</string>
+     </property>
+     <property name="text">
+      <string>stopped</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:orange;</string>
+     </property>
+     <property name="text">
+      <string>Pause</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>40</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:green;</string>
+     </property>
+     <property name="text">
+      <string>Work</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>40</y>
+       <width>67</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:gray;</string>
+     </property>
+     <property name="text">
+      <string>Wait</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

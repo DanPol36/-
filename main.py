@@ -1,34 +1,34 @@
+
+# main.py
 from design import Ui_MainWindow
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from hypoviy_robot import RobotGui, StateManager, Logger, Statistics
 import sys
-# import threading
 
 class Controller:
-    # контроллер
-    def init(self, ui):
+    def __init__(self, ui):
+        # store references and attach UI to the robot frontend
         self.ui = ui
-        self.robot = RobotGui()
+        self.root = RobotGui(ui)
         self.state = StateManager()
         self.logger = Logger()
         self.stats = Statistics()
-        # self.connect_buttons()
 
 def main():
-    # запуск Qt
-    app = QtWidgets.QApplication(sys.argv)
-    window = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    app = QApplication(sys.argv)
+    window = QMainWindow()
+    ui = Ui_MainWindow()  # Исправлено: ui_MainWindow -> Ui_MainWindow
     ui.setupUi(window)
-
-    # создание контроллера
-    # controller = Controller(ui)
-
-    # показ окна
+    
+    # Инициализация контроллера
+    controller = Controller(ui)
+    # Подключаем кнопки и прочие сигналы
+    controller.root.power_on()
+    
+    # Показ окна
     window.show()
     sys.exit(app.exec_())
-
 
 if __name__ == "__main__":
     main()
