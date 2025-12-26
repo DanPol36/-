@@ -5,16 +5,12 @@
 class RobotGui():
     # заглушка с функциями под будущее управление и подвязку кнопок
     def __init__(self, ui=None):
-        # store reference to UI if provided
         self.ui = ui
 
     def power_on(self):
-        # guard: require UI reference
         if not hasattr(self, "ui") or self.ui is None:
             return
-        # connect UI button to printing action (inline)
         self.ui.pushButton.clicked.connect(lambda: print(1))
-        # immediately perform power on action (print 1)
         print(1)
 
     def power_off(self):
